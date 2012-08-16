@@ -1,0 +1,20 @@
+body {
+    background-color: #4A525A;
+    color: #EEE;
+    font-family: Baskerville, serif
+    # highlight: #5f6870
+    # text highlight : AAA
+}
+
+
+#main-canvas {
+    padding: 5px;
+    border: 2px solid #444;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    background-color: #EEE;
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+}
