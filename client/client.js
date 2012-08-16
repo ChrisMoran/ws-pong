@@ -1,6 +1,6 @@
-$(document).ready(function() {
+window.onload = function() {
 	Util = (function(){ 
-	    var _msg = $("#messages");
+		var _msg = document.getElementById('messages');
 	    
 	    function printSafe(str) {
 			return str.replace('&', '&amp').replace('<', '&lt').replace('>', '&gt');
@@ -8,15 +8,15 @@ $(document).ready(function() {
 	
 	    return {
 	        log : function(msg) {
-			    _msg.append(printSafe(msg)+"<br/>");
+			    _msg.innerHTML += printSafe(msg)+"<br/>";
 		    },
 		    getWebSocketAddress : function() {
 		        return "ws://" + window.location.host;
 		    }
 	    };
     })();
-	
-	var canvas = $('#main-canvas')[0];
+
+	var canvas = document.getElementById('main-canvas');
 	
 	if(canvas && canvas.getContext && ("WebSocket" in window)) {
 		var context = canvas.getContext('2d');
@@ -194,4 +194,4 @@ $(document).ready(function() {
 	} else {
 		//Browser not supported!!
 	}
-});
+};
