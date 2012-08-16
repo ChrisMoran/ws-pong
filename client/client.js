@@ -27,7 +27,7 @@ $(document).ready(function() {
 		        socket : new WebSocket(Util.getWebSocketAddress()),
 		        isActive : false,
                 fillBackground : function() {
-                    context.fillStyle = this.colors.background;
+                    context.fillStyle = "#eee";
                     context.fillRect(0,0,canvas.width, canvas.height);
                 },
                 sendObj : function(o) {

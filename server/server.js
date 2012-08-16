@@ -40,7 +40,7 @@ function contentType(filePath) {
 	
 http = http.createServer(function (req, res) {
 	var path = url.parse(req.url).pathname || INDEX;
-	path = __dirname + "/" + (path === "/" ? INDEX : path);
+	path = __dirname + "/../client/" + (path === "/" ? INDEX : path);
 	fs.readFile(path, ENCODING, function(err, data) {
 		if(data !== undefined) {
 			respondWithData(res, data, contentType(path));		
@@ -53,7 +53,7 @@ http = http.createServer(function (req, res) {
 console.log('Started server on port %d', HTTP_PORT);	
 	
 var wss = ws.attach(http),
-    Messages = require('./messages').Messages,
+    Messages = require('../client/messages').Messages,
     util = require('util'),
     waitingPlayers = [],
     matchedPlayers = {},
